@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", "Noto Sans Arabic", Tahoma, system-ui, sans-serif;
+
+  --color-bg: #fbf7f4;
+  --color-surface: #ffffff;
+  --color-ink: #2a1f24;
+  --color-muted: #75666c;
+  --color-line: #ecdfe4;
+
+  --color-brand: #74114f;
+  --color-brand-dark: #560b39;
+  --color-brand-soft: #f6e7f0;
+
+  --color-gold: #b7862f;
+  --color-gold-soft: #faf1e1;
+
+  --color-ok: #1f8a4c;
+  --color-ok-soft: #e5f4ea;
+  --color-wa: #1fa855;
+  --color-danger: #c62828;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+}
+
+/* Horizontal scroll rows without a visible scrollbar */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Latin brand/product names stay left-to-right inside RTL text */
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
