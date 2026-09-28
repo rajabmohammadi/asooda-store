@@ -1,43 +1,19 @@
-import { BadgeCheck, LayoutGrid, MousePointerClick, PhoneCall, ShoppingBag } from "lucide-react";
+import { LayoutGrid, MousePointerClick, PhoneCall, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 
 import { CategoryIcon } from "@/components/icons";
-import { ProductArt } from "@/components/ProductArt";
+import { HomeHero } from "@/components/HomeHero";
 import { ProductRow, SectionHeader, TrustStrip } from "@/components/sections";
-import { brands, categories, products, skinTypes } from "@/data/catalog";
+import { brands, categories, skinTypes } from "@/data/catalog";
 import { bestSellers, discounted } from "@/lib/catalog-query";
 
 const skinTiles = skinTypes.slice(0, 4);
 const skinTileColors = ["#fde2c8", "#e3eefc", "#eee3f7", "#e2f3e7"];
 
 export default function HomePage() {
-  const featured = products.find((p) => p.slug === "neutrogena-ultra-sheer-spf50")!;
-
   return (
     <div className="space-y-8 pt-4">
-      {/* Static hero: no auto-rotating slider, to save data */}
-      <section className="mx-4 overflow-hidden rounded-3xl bg-gradient-to-l from-brand to-brand-dark text-white">
-        <div className="flex items-center gap-2 p-5 md:p-10">
-          <div className="flex-1 space-y-3">
-            <p className="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-[12px] font-medium">
-              <BadgeCheck className="size-4" /> ضمانت اصل بودن و تاریخ ختم
-            </p>
-            <h1 className="text-2xl font-extrabold leading-tight md:text-4xl">
-             معتبر ترین فروشگاه آرایشی و بهداشتی
-              <br />
-             محصولات اورجینال با ضمانت اصالت
-            </h1>
-            <p className="text-sm text-white/85 md:text-base">پول را وقت تحویل گرفتن بپردازید. اول جنس را ببینید.</p>
-            <Link
-              href="/c/discounts"
-              className="inline-block rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-brand shadow-sm hover:bg-brand-soft"
-            >
-              دیدن تخفیف ها
-            </Link>
-          </div>
-          <ProductArt shape={featured.shape} color={featured.color} className="w-28 shrink-0 drop-shadow-xl md:w-56" />
-        </div>
-      </section>
+      <HomeHero />
 
       {/* Category grid, 2 rows × 4 */}
       <section aria-labelledby="cats-title">
